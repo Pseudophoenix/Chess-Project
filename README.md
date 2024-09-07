@@ -10,3 +10,4 @@ Objects are the sensors and we simply detect the change in the sensor depending 
 
 **Challenges:**
 1. The pieces are currently not detecting the presence of pieces in the path.
+2. As the sensor used are LDRs so the board is detecting the shadows of hands as pieces and generating the result.
