@@ -47,21 +47,30 @@ void setup() {
   //  37->A0    36->B0    35->C0
   //  34->A1    33->B1    32->C1
   //  31->A2    30->B2    29->C2
-  // 1-12       2-4         3-6
-  // 4-11       5-5         6-3
-  // 7-10       8-7         9-8
-  // int nv[9];
+
+  // 0-12       1-4         2-6
+  // 3-11       4-5         5-3
+  // 6-10       7-7         8-8
+
+  // H-72
+  // C-67
+  // E-69
+
   Serial.begin(9600);
   for (int i = 0; i < 9; i++) {
     S[i].pin =s[i];
-    if (i % 5 == 0) {
+    if (i / 3 == 0) {
       S[i].fval = 0;
       switch (i) {
         case 0:
-          S[i].piece = 'H';
+          S[i].piece = 69;
           break;
         case 1:
-          S[i].piece='C';
+          S[i].piece = 72;
+          break;
+        case 2:
+          S[i].piece = 67;
+          break;
       }
     }
     S[i].x = 0 + i / 3;
@@ -83,7 +92,6 @@ void setup() {
   }
 }
 void loop() {
-  // put your main code here, to run repeatedly:
   delay(400);
   readSensor();
   delay(400);
